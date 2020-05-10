@@ -2,7 +2,12 @@
   "scripts": {
     "develop": "nodemon node dist/index.js",
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:migrate:generate": "sequelize-cli migration:generate --name ",
+    "db:drop": "sequelize-cli db:drop",
+    "db:create": "sequelize-cli db:create",
+    "db:reset": "sequelize-cli db:drop && sequelize-cli db:create && sequelize-cli db:migrate"
   },
   "devDependencies": {
     "@types/node": "^13.13.5",
