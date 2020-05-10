@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize'
-import db from '../infrustructure/database'
+import db from './'
 
 class Category extends Sequelize.Model {}
 Category.init({

@@ -1,14 +1,7 @@
 import { Sequelize } from 'sequelize'
-import dotenv from 'dotenv'
+import database from '../config/database'
 
-dotenv.config()
-
-const config = {
-  host: process.env.DATABASE_HOST,
-  database: process.env.DATABASE_NAME,
-  username: process.env.DATABASE_USERNAME,
-  password: process.env.DATABASE_PASSWORD,
-}
+const config = database.modules[process.env.NODE_ENV || 'development']
 
 const connection = new Sequelize(config.database, config.username, config.password, {
   dialect: 'mysql',

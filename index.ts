@@ -1,6 +1,6 @@
 import express from 'express'
 import path from 'path'
-import { connect } from './src/infrustructure/database'
+import { connect } from './src/models'
 const app = express()
 const port = 8080 // default port to listen
 
