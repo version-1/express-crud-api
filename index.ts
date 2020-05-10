@@ -1,5 +1,6 @@
 import express from 'express'
 import path from 'path'
+import db, { connect } from './src/infrustructure/database/index'
 const app = express()
 const port = 8080 // default port to listen
 
@@ -12,4 +13,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   // tslint:disable-next-line:no-console
   console.log(`server started at http://localhost:${port}`)
+  connect()
 })
