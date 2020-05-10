@@ -5,9 +5,12 @@
     "watch": "tsc -w",
     "db:migrate": "sequelize-cli db:migrate",
     "db:migrate:generate": "sequelize-cli migration:generate --name ",
+    "db:seed": "sequelize-cli db:seed:all",
+    "db:seed:generate": "sequelize-cli seed:generate --name ",
     "db:drop": "sequelize-cli db:drop",
     "db:create": "sequelize-cli db:create",
-    "db:reset": "sequelize-cli db:drop && sequelize-cli db:create && sequelize-cli db:migrate"
+    "db:reset": "sequelize-cli db:drop && sequelize-cli db:create && sequelize-cli db:migrate",
+    "db:setup": "yarn db:reset && yarn db:seed"
   },
   "devDependencies": {
     "@types/node": "^13.13.5",
