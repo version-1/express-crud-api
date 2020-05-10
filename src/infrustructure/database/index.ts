@@ -14,13 +14,14 @@ const connection = new Sequelize(config.database, config.username, config.passwo
   dialect: 'mysql',
 })
 
-export const connect = () => connection
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.', `database: ${config.database}`);
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+export const connect = () =>
+  connection
+    .authenticate()
+    .then(() => {
+      console.log('Connection has been established successfully.', `database: ${config.database}`)
+    })
+    .catch((err) => {
+      console.error('Unable to connect to the database:', err)
+    })
 
 export default connection
