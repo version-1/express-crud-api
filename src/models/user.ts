@@ -3,8 +3,7 @@ import db from './'
 
 class User extends Sequelize.Model {
   public static salt(user) {
-	  const paddedNum  = String(user.id).padStart(8, '0')
-	  return [user.loginId, paddedNum].join('-')
+	  return [user.loginId].join('-')
 	}
 }
 User.init({

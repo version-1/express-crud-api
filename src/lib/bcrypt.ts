@@ -8,22 +8,23 @@ const round = 10
 
 export const hash = (password, salt) => {
   return new Promise((resolve, reject) => {
-    bcrypt.hash(getBeforeHash(password, salt), round, function (err, hash) {
+    bcrypt.hash(getBeforeHash(password, salt), round, function (err, token) {
       if (err) {
         return reject(err)
       }
-      resolve(hash)
+      resolve(token)
     })
   })
 }
 
-export const compare = (password, salt, hash) => {
-  return new Promise((resolve, reject) => {
-    bcrypt.compare(getBeforeHash(password, salt), hash, function (err, res) {
+export const compare = async (password, salt, hashedToken) => {
+  return await new Promise((resolve, reject) => {
+    bcrypt.compare(getBeforeHash(password, salt), hashedToken, function (err, res) {
       if (err) {
-        return reject(err)
+        console.error(err)
+        return false
       }
-      resolve(res)
+      return true
     })
   })
 }
