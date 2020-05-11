@@ -6,7 +6,7 @@ UserCategory.init({
   // attributes
   id: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    primaryKey: true
   },
   userId: {
     type: Sequelize.INTEGER,

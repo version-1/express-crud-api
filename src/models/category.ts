@@ -6,7 +6,7 @@ Category.init({
   // attributes
   id: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    primaryKey: true
   },
   key: {
     type: Sequelize.STRING,

@@ -4,6 +4,10 @@ import db from './'
 class Blog extends Sequelize.Model {}
 Blog.init({
   // attributes
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true
+  },
   userId: {
     type: Sequelize.INTEGER,
     allowNull: false

@@ -1,12 +1,17 @@
 import Sequelize from 'sequelize'
 import db from './'
 
-class User extends Sequelize.Model {}
+class User extends Sequelize.Model {
+  public static salt(user) {
+	  const paddedNum  = String(user.id).padStart(8, '0')
+	  return [user.loginId, paddedNum].join('-')
+	}
+}
 User.init({
   // attributes
   id: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    primaryKey: true
   },
   loginId: {
     type: Sequelize.STRING,
@@ -39,3 +44,5 @@ User.init({
   modelName: 'user'
   // options
 });
+
+export default User
