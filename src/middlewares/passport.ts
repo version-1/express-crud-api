@@ -35,7 +35,6 @@ passport.use(
       secretOrKey: process.env.JWT_SECRET_KEY,
     },
     function (jwtPayload, cb) {
-      console.log(jwtPayload)
       return User.findByPk(jwtPayload.id)
         .then((user) => {
           return cb(null, user)
