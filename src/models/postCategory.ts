@@ -31,3 +31,5 @@ PostCategory.init({
   modelName: 'postCategory'
   // options
 });
+
+export default PostCategory

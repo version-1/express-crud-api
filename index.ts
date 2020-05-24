@@ -7,6 +7,7 @@ import { connect } from './src/models'
 import user from './src/routers/user'
 import auth from './src/routers/auth'
 import categories from './src/routers/categories'
+import posts from './src/routers/posts'
 const app = express()
 const port = 8080 // default port to listen
 
@@ -18,8 +19,15 @@ app.get('/', (req, res) => {
 app.use(express.json())
 app.use(bodyParser.json({ type: 'application/*+json' }))
 
-app.use('/categories', passport.authenticate('jwt', {session: false}), categories)
-app.use('/user', passport.authenticate('jwt', {session: false}), user)
+const routersWithAuth = [
+  { path: '/posts', route: posts },
+  { path: '/categories', route: categories },
+  { path: '/user', route: user },
+]
+
+routersWithAuth.forEach(route => {
+  app.use(route.path, passport.authenticate('jwt', {session: false}), route.route)
+})
 app.use('/auth', auth)
 
 // start the express server

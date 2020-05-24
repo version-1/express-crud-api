@@ -29,3 +29,5 @@ Post.init({
   modelName: 'post'
   // options
 });
+
+export default Post
