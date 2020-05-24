@@ -21,3 +21,5 @@ Category.init({
   modelName: 'category'
   // options
 });
+
+export default Category

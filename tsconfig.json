@@ -7,10 +7,13 @@
         "target": "es2020",
         "moduleResolution": "node",
         "removeComments": true,
+        "allowJs": true,
         "allowSyntheticDefaultImports": true
     },
     "exclude": [
-      "node_modules"
+      "node_modules",
+      "src/db/migrations",
+      "src/db/seeders"
     ],
     "include": [
         "index.ts",

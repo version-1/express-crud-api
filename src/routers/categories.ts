@@ -1,10 +1,15 @@
 import express from 'express'
-import User from '../models/user'
+import Category from '../models/category'
 const router = express.Router()
 
-/* POST categories listing. */
+/* GET categories listing. */
 router.get('/', async function (req, res, next) {
-  res.status(200).json({ user: req.user })
+  try {
+    const categories = await Category.findAll()
+    res.status(200).json({ categories })
+  } catch (error) {
+    return next(error)
+  }
 })
 
 export default router

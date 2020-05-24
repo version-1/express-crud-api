@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
 app.use(express.json())
 app.use(bodyParser.json({ type: 'application/*+json' }))
 
+app.use('/categories', passport.authenticate('jwt', {session: false}), categories)
 app.use('/user', passport.authenticate('jwt', {session: false}), user)
 app.use('/auth', auth)
-app.use('/categories', categories)
 
 // start the express server
 app.listen(port, () => {
