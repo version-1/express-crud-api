@@ -1,8 +1,8 @@
 import Sequelize from 'sequelize'
 import db from './'
 
-class Blog extends Sequelize.Model {}
-Blog.init({
+class Post extends Sequelize.Model {}
+Post.init({
   // attributes
   id: {
     type: Sequelize.INTEGER,
@@ -26,6 +26,6 @@ Blog.init({
   }
 }, {
   sequelize: db,
-  modelName: 'blog'
+  modelName: 'post'
   // options
 });

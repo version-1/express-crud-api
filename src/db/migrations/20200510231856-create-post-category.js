@@ -1,6 +1,6 @@
 'use strict';
 
-const tableName = 'UserCategories'
+const tableName = 'PostCategories'
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -11,7 +11,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
+      postId: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

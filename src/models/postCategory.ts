@@ -1,14 +1,14 @@
 import Sequelize from 'sequelize'
 import db from './'
 
-class UserCategory extends Sequelize.Model {}
-UserCategory.init({
+class PostCategory extends Sequelize.Model {}
+PostCategory.init({
   // attributes
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true
   },
-  userId: {
+  postId: {
     type: Sequelize.INTEGER,
     allowNull: false
   },
@@ -28,6 +28,6 @@ UserCategory.init({
   },
 }, {
   sequelize: db,
-  modelName: 'userCategory'
+  modelName: 'postCategory'
   // options
 });
