@@ -41,7 +41,7 @@
 
 APIの仕様書があるのでそれをもとに実装ください
 
-[API仕様書](https://github.com/version-1/express-crud/issues/1)
+[API仕様書](https://github.com/version-1/express-crud/wiki/API%E4%BB%95%E6%A7%98%E6%9B%B8)
 
 
 #### チェックリスト
