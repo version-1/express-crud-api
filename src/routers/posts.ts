@@ -15,6 +15,12 @@ router.get('/', async function (req, res, next) {
   }
 })
 
+router.get('/:id', async function (req, res, next) {
+  const { id } = req.params
+  const post = await Post.findByPk(id)
+  res.status(200).json({ post })
+})
+
 /* POST create post */
 router.post('/', async function (req, res, next) {
   const {
@@ -25,6 +31,35 @@ router.post('/', async function (req, res, next) {
     await Post.add(params, categoryIds)
     res.status(201).json({})
   } catch (error) {
+    return next(error)
+  }
+})
+
+/* PATCH update post */
+router.patch('/:id', async function (req, res, next) {
+  const { id } = req.params
+  const {
+    post: { categoryIds, ...rest },
+  } = req.body
+  const post = await Post.findByPk(id)
+  try {
+    await post.updateWithAssociation(rest, { categoryIds })
+    res.status(200).json({ post })
+  } catch (error) {
+    return next(error)
+  }
+})
+
+/* DELETE delete post */
+router.delete('/:id', async function (req, res, next) {
+  const { id } = req.params
+  const { categoryIds } = req.body
+  try {
+    const post = await Post.findByPk(id)
+    await post.destroy()
+    res.status(200).json({ post })
+  } catch (error) {
+    console.error(error)
     return next(error)
   }
 })
