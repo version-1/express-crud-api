@@ -1,8 +1,7 @@
 {
   "scripts": {
     "develop": "nodemon node dist/index.js",
-    "start:production": "yarn build;node dist/index.js",
-    "deploy:production": "yarn db:migrate; yarn start:production",
+    "deploy": "yarn db:migrate && yarn build && node dist/index.js",
     "build": "tsc",
     "watch": "tsc -w",
     "db:migrate": "sequelize-cli db:migrate",
@@ -30,11 +29,11 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
     "nodemon": "^2.0.3",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "sequelize-cli": "^5.5.1",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "sequelize-cli": "^5.5.1",
-    "typescript": "^3.8.3",
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

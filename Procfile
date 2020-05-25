@@ -1,1 +1,1 @@
-web: yarn install;yarn deploy:production
+web: NODE_ENV=development yarn install && yarn deploy
