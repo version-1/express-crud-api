@@ -5,10 +5,10 @@ import PostCategory from './postCategory'
 import Category from './category'
 
 class Post extends Sequelize.Model {
-  public id: number
-  public setCategories: Function
+  public id?: number
+  public setCategories?: Function
 
-  static async add(params, categoryIds) {
+  static async add(params: any, categoryIds: number[]) {
     await db.transaction(async (t) => {
       const post = await Post.create(params, { transaction: t })
       const categories = await Category.findAll({ where: { id: categoryIds } })
@@ -21,11 +21,11 @@ class Post extends Sequelize.Model {
     })
   }
 
-  public async updateWithAssociation(params, associations) {
+  public async updateWithAssociation(params: any, associations: { categoryIds: number[] }) {
     await db.transaction(async (t) => {
     this.update(params)
     const categories = await Category.findAll({ where: {id: associations.categoryIds }})
-    this.setCategories(categories, { through: { postId: this.id }})
+    this.setCategories!(categories, { through: { postId: this.id }})
     })
   }
 }

@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 import passport from 'passport'
 import User from '../models/user'
@@ -6,8 +6,8 @@ import { hash } from '../lib/bcrypt'
 const router = express.Router()
 
 /* POST login. */
-router.post('/login', function (req, res, next) {
-  passport.authenticate('local', { session: false }, (err, user, info) => {
+router.post('/login', function (req: any, res: Response, next: NextFunction) {
+  passport.authenticate('local', { session: false }, (err: Error, user: any, info: any) => {
     if (err || !user) {
       console.error('hoge', err)
       return res.status(400).json({
@@ -15,20 +15,20 @@ router.post('/login', function (req, res, next) {
         user,
       })
     }
-    req.login(user, { session: false }, (err) => {
+    req.login(user, { session: false }, (err: Error) => {
       if (err) {
         res.send(err)
       }
       // generate a signed son web token with the contents of user object and return it in the response
       const payload = { id: user.id, loginId: user.loginId }
-      const token = jwt.sign(payload, process.env.JWT_SECRET_KEY)
+      const token = jwt.sign(payload, process.env.JWT_SECRET_KEY!)
       user.authorizeToken = '[Secret]'
       return res.json({ user, token })
     })
   })(req, res)
 })
 
-router.post('/signup', async function (req, res, next) {
+router.post('/signup', async function (req: any, res: Response, next: NextFunction) {
   const { user } = req.body
   const _user = await User.findOne({ where: { loginId: user.loginId } })
   if (!user.password || user.password.length < 6) {
@@ -41,7 +41,7 @@ router.post('/signup', async function (req, res, next) {
   delete user['password']
   user.authorizeToken = authorizeToken
 
-  User.create(user)
+  await User.create(user)
 
   res.status(201).json({})
 })

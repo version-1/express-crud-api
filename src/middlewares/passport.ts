@@ -13,17 +13,17 @@ passport.use(
       usernameField: 'loginId',
       passwordField: 'password',
     },
-    async function (loginId, password, cb) {
+    async function (loginId: string, password: string, cb: Function) {
       return User.findOne({ where: { loginId } })
-        .then((user) => {
+        .then((user: User) => {
           if (!user) {
             return cb(null, false, { message: 'Incorrect email or password.' })
           }
 
-          const validate = compare(password, User.salt(user), user.authorizeToken)
+          const validate = compare(password, User.salt(user), user.authorizeToken!)
           return cb(null, user, { message: 'Logged In Successfully' })
         })
-        .catch((err) => cb(err))
+        .catch((err: Error) => cb(err))
     },
   ),
 )
@@ -34,12 +34,12 @@ passport.use(
       jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
       secretOrKey: process.env.JWT_SECRET_KEY,
     },
-    function (jwtPayload, cb) {
+    function (jwtPayload: any, cb: Function) {
       return User.findByPk(jwtPayload.id)
-        .then((user) => {
+        .then((user: User) => {
           return cb(null, user)
         })
-        .catch((err) => {
+        .catch((err: Error) => {
           return cb(err)
         })
     },

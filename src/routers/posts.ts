@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response, NextFunction } from 'express'
 import Post, { Categories } from '../models/post'
 import PostCategory from '../models/postCategory'
 import Category from '../models/category'
@@ -6,7 +6,7 @@ import conn from '../models'
 const router = express.Router()
 
 /* GET categories listing. */
-router.get('/', async function (req, res, next) {
+router.get('/', async function (req: Request, res: Response, next: NextFunction) {
   try {
     const posts = await Post.findAll()
     res.status(200).json({ posts })
@@ -15,14 +15,14 @@ router.get('/', async function (req, res, next) {
   }
 })
 
-router.get('/:id', async function (req, res, next) {
+router.get('/:id', async function (req: Request, res: Response, next: NextFunction) {
   const { id } = req.params
   const post = await Post.findByPk(id)
   res.status(200).json({ post })
 })
 
 /* POST create post */
-router.post('/', async function (req, res, next) {
+router.post('/', async function (req: any, res: Response, next: NextFunction) {
   const {
     post: { categoryIds, ...rest },
   } = req.body
@@ -36,7 +36,7 @@ router.post('/', async function (req, res, next) {
 })
 
 /* PATCH update post */
-router.patch('/:id', async function (req, res, next) {
+router.patch('/:id', async function (req: Request, res: Response, next: NextFunction) {
   const { id } = req.params
   const {
     post: { categoryIds, ...rest },
@@ -51,7 +51,7 @@ router.patch('/:id', async function (req, res, next) {
 })
 
 /* DELETE delete post */
-router.delete('/:id', async function (req, res, next) {
+router.delete('/:id', async function (req: Request, res: Response, next: NextFunction) {
   const { id } = req.params
   const { categoryIds } = req.body
   try {
