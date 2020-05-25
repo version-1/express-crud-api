@@ -3,6 +3,7 @@ import database from '../config/database'
 
 const config = (database as any)[process.env.NODE_ENV || 'development']
 
+console.log(database, process.env.NODE_ENV, config)
 const connection = new Sequelize(config.database, config.username, config.password, {
   dialect: 'mysql',
 })
