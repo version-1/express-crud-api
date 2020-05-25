@@ -8,6 +8,7 @@ Category.init({
   // attributes
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true
   },
   key: {

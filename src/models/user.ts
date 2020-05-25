@@ -12,6 +12,7 @@ User.init(
     // attributes
     id: {
       type: Sequelize.INTEGER,
+      autoIncrement: true,
       primaryKey: true,
     },
     loginId: {

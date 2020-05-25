@@ -10,6 +10,7 @@ Post.init(
     // attributes
     id: {
       type: Sequelize.INTEGER,
+      autoIncrement: true,
       primaryKey: true,
     },
     userId: {
@@ -38,7 +39,7 @@ Post.init(
 
 export const PostCategories = Post.hasMany(PostCategory)
 export const postCategory = PostCategory.belongsTo(Post)
-export const Categories = Post.belongsToMany(Category, { as: 'categories', through: { model: PostCategory } })
-export const Posts = Category.belongsToMany(Post, { as: 'posts', through: { model: PostCategory } })
+export const Categories = Post.belongsToMany(Category, { as: 'categories', through: 'PostCategories' })
+export const Posts = Category.belongsToMany(Post, { as: 'posts', through: 'PostCategories' })
 
 export default Post
