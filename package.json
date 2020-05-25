@@ -1,6 +1,7 @@
 {
   "scripts": {
     "develop": "nodemon node dist/index.js",
+    "start:production": "yarn build;node dist/index.js",
     "build": "tsc",
     "watch": "tsc -w",
     "db:migrate": "sequelize-cli db:migrate",
