@@ -4,7 +4,20 @@ import User from './user'
 import PostCategory from './postCategory'
 import Category from './category'
 
-class Post extends Sequelize.Model {}
+class Post extends Sequelize.Model {
+  static async add(params, categoryIds) {
+    await db.transaction(async (t) => {
+      const post = await Post.create(params, { transaction: t })
+      const categories = await Category.findAll({ where: { id: categoryIds } })
+      await post.setCategories(categories, {
+        through: {
+          postId: post.id,
+        },
+        transaction: t,
+      })
+    })
+  }
+}
 Post.init(
   {
     // attributes

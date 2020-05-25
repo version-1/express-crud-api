@@ -22,16 +22,7 @@ router.post('/', async function (req, res, next) {
   } = req.body
   try {
     const params = { ...rest, userId: req.user.id }
-    await conn.transaction(async (t) => {
-      const post = await Post.create(params, { transaction: t })
-      const categories = await Category.findAll({ where: { id: categoryIds } })
-      await post.setCategories(categories, {
-        through: {
-          postId: post.id,
-        },
-        transaction: t,
-      })
-    })
+    await Post.add(params, categoryIds)
     res.status(201).json({})
   } catch (error) {
     return next(error)
