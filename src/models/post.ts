@@ -4,6 +4,12 @@ import User from './user'
 import PostCategory from './postCategory'
 import Category from './category'
 
+export const Status = {
+  draft: 0,
+  published: 100,
+  unpublished: 200,
+}
+
 class Post extends Sequelize.Model {
   public id?: number
   public setCategories?: Function

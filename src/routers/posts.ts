@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express'
-import Post, { Categories } from '../models/post'
+import Post, { Status, Categories } from '../models/post'
 import PostCategory from '../models/postCategory'
 import Category from '../models/category'
 import conn from '../models'
@@ -7,8 +7,12 @@ const router = express.Router()
 
 /* GET posts listing. */
 router.get('/', async function (req: Request, res: Response, next: NextFunction) {
+  const where = req.query as { [key: string]: any }
   try {
-    const posts = await Post.findAll({ include: [{ model: Category, as: 'categories' }] })
+    const posts = await Post.findAll({
+      where,
+      include: [{ model: Category, as: 'categories' }],
+    })
     res.status(200).json({ posts })
   } catch (error) {
     return next(error)
@@ -17,7 +21,9 @@ router.get('/', async function (req: Request, res: Response, next: NextFunction)
 
 router.get('/:id', async function (req: Request, res: Response, next: NextFunction) {
   const { id } = req.params
-  const post = await Post.findByPk(id)
+  const post = await Post.findByPk(id, {
+    include: [{ model: Category, as: 'categories' }],
+  })
   res.status(200).json({ post })
 })
 
