@@ -4,26 +4,29 @@ import PostCategory from './postCategory'
 import Post from './post'
 
 class Category extends Sequelize.Model {}
-Category.init({
-  // attributes
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+Category.init(
+  {
+    // attributes
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    key: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
   },
-  key: {
-    type: Sequelize.STRING,
-    allowNull: false
+  {
+    sequelize: db,
+    modelName: 'category',
+    // options
   },
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
-}, {
-  sequelize: db,
-  modelName: 'category'
-  // options
-});
+)
 
 Category.hasMany(PostCategory)
 PostCategory.belongsTo(Category)

@@ -5,10 +5,10 @@ import Category from '../models/category'
 import conn from '../models'
 const router = express.Router()
 
-/* GET categories listing. */
+/* GET posts listing. */
 router.get('/', async function (req: Request, res: Response, next: NextFunction) {
   try {
-    const posts = await Post.findAll()
+    const posts = await Post.findAll({ include: [{ model: Category, as: 'categories' }] })
     res.status(200).json({ posts })
   } catch (error) {
     return next(error)
