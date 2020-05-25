@@ -1,1 +1,1 @@
-web: yarn deploy:production
+web: yarn install;yarn deploy:production

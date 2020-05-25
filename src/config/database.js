@@ -8,6 +8,7 @@ const config = {
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
 }
+console.log(config)
 
 module.exports = {
   development: {
@@ -29,7 +30,7 @@ module.exports = {
   production: {
     username: config.username,
     password: config.password,
-    database: config.database + '_production',
+    database: config.database,
     host: config.host,
     dialect: 'mysql',
     operatorsAliases: false,
