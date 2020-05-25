@@ -43,7 +43,8 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 ### 2. 実装
 
-APIの仕様書があるのでそれをもとに実装ください
+APIの仕様書があるのでそれをもとに実装ください。
+仕様書通りに抜け漏れなく実装するようお願いします。
 
 [API仕様書](https://github.com/version-1/express-crud/wiki/API%E4%BB%95%E6%A7%98%E6%9B%B8)
 
