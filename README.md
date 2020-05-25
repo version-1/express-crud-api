@@ -6,7 +6,7 @@
 
 ## デモ
 
-デモは(Heroku)[https://www.heroku.com/]に上がっています。
+デモは [Heroku](https://www.heroku.com) に上がっています。
 
 demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
