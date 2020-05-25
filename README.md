@@ -29,6 +29,10 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 ### 1. 実装に必要な概念を学ぶ
 
+#### Docker
+
+コンテナ仮想化技術をメインでは学びませんがMySQLを使用する際に使うので概要だけでもさらうようにしておいてください。
+
 #### データベース(MySQL)の基本
 
 これまでデータベースを触ったことがない人、Wikiの内容を初めてみる方は課題前に必ずチュートリアルを終わらせてから課題に入ってください。
@@ -40,6 +44,8 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 #### MVCとは
 
 #### WebAPIでの認証・認可
+
+[Express+Passportでの認証の実装]()
 
 ### 2. 実装
 
