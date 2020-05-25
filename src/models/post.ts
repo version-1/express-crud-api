@@ -12,20 +12,22 @@ class Post extends Sequelize.Model {
     await db.transaction(async (t) => {
       const post = await Post.create(params, { transaction: t })
       const categories = await Category.findAll({ where: { id: categoryIds } })
-      await post.setCategories(categories, {
-        through: {
-          postId: post.id,
-        },
-        transaction: t,
-      })
+      if (post) {
+        await (post as any).setCategories(categories, {
+          through: {
+            postId: post.id,
+          },
+          transaction: t,
+        })
+      }
     })
   }
 
   public async updateWithAssociation(params: any, associations: { categoryIds: number[] }) {
     await db.transaction(async (t) => {
-    this.update(params)
-    const categories = await Category.findAll({ where: {id: associations.categoryIds }})
-    this.setCategories!(categories, { through: { postId: this.id }})
+      this.update(params)
+      const categories = await Category.findAll({ where: { id: associations.categoryIds } })
+      this.setCategories!(categories, { through: { postId: this.id } })
     })
   }
 }
@@ -57,7 +59,7 @@ Post.init(
   {
     sequelize: db,
     modelName: 'post',
-  }
+  },
 )
 
 export const PostCategories = Post.hasMany(PostCategory)

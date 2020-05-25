@@ -43,7 +43,7 @@ router.patch('/:id', async function (req: Request, res: Response, next: NextFunc
   } = req.body
   const post = await Post.findByPk(id)
   try {
-    await post.updateWithAssociation(rest, { categoryIds })
+    await post!.updateWithAssociation(rest, { categoryIds })
     res.status(200).json({ post })
   } catch (error) {
     return next(error)
@@ -56,7 +56,7 @@ router.delete('/:id', async function (req: Request, res: Response, next: NextFun
   const { categoryIds } = req.body
   try {
     const post = await Post.findByPk(id)
-    await post.destroy()
+    await post!.destroy()
     res.status(200).json({ post })
   } catch (error) {
     console.error(error)

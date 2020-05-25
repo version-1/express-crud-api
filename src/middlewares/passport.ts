@@ -15,7 +15,7 @@ passport.use(
     },
     async function (loginId: string, password: string, cb: Function) {
       return User.findOne({ where: { loginId } })
-        .then((user: User) => {
+        .then((user: User | null) => {
           if (!user) {
             return cb(null, false, { message: 'Incorrect email or password.' })
           }
@@ -36,7 +36,7 @@ passport.use(
     },
     function (jwtPayload: any, cb: Function) {
       return User.findByPk(jwtPayload.id)
-        .then((user: User) => {
+        .then((user: User | null) => {
           return cb(null, user)
         })
         .catch((err: Error) => {
