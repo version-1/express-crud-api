@@ -8,6 +8,8 @@
 
 デモはHerokuに上がっています。
 
+demo: [Demo](https://express-crud-sample.herokuapp.com/)
+
 ## 課題で身に着けること
 
 - データベースの基本
