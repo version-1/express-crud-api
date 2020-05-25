@@ -1,6 +1,7 @@
 import Sequelize from 'sequelize'
 import db from './'
 import PostCategory from './postCategory'
+import Post from './post'
 
 class Category extends Sequelize.Model {}
 Category.init({
