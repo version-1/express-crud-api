@@ -14,4 +14,14 @@ router.get('/', async function (req, res, next) {
   }
 })
 
+/* POST create post */
+router.post('/', async function (req, res, next) {
+  try {
+    const posts = await Post.findAll()
+    res.status(200).json({ posts })
+  } catch (error) {
+    return next(error)
+  }
+})
+
 export default router

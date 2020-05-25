@@ -1,5 +1,7 @@
 import Sequelize from 'sequelize'
 import db from './'
+import User from './user'
+import PostCategory from './postCategory'
 
 class Post extends Sequelize.Model {}
 Post.init({
@@ -29,5 +31,9 @@ Post.init({
   modelName: 'post'
   // options
 });
+
+Post.hasMany(PostCategory)
+PostCategory.hasMany(PostCategory)
+Post.belongsToMany(Post, { as: 'categoires', through: 'PostCategory' })
 
 export default Post

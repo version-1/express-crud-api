@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize'
 import db from './'
+import Post from './post'
 
 class User extends Sequelize.Model {
   public static salt(user) {
@@ -46,5 +47,8 @@ User.init(
     // options
   },
 )
+
+User.hasMany(Post)
+Post.belongsTo(User)
 
 export default User
