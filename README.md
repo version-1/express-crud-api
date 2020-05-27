@@ -100,8 +100,6 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 - [ ] /auth/loginでログインができること(jwtが返却されること）
 - [ ] /userでユーザ情報が取得できること
 
-
-
 #### ステップ4 その他のエンドポイントの実装
 
 仕様書にあるその他のエンドポイントの実装
