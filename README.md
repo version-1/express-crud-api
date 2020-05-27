@@ -35,30 +35,30 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 これまでデータベースを触ったことがない人、Wikiの内容を初めてみる方は課題前に必ずチュートリアルを終わらせてから課題に入ってください。
 
-[MySQLチュートリアル](https://github.com/version-1/express-crud/wiki/MySQL%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB)
+- [MySQLチュートリアル](https://github.com/version-1/express-crud/wiki/MySQL%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB)
 
 #### ORM(オブジェクトリレーショナルマッッピング)
 
-[もっとORMを使えるようになりたいので、見直してみた](https://qiita.com/niisan-tokyo/items/156eb35c6eeaf07b9b65)
-[オブジェクト関係マッピング](https://qiita.com/yk-nakamura/items/acd071f16cda844579b9)
-[Node.JSのSequelize ORM入門](https://qiita.com/markusveeyola/items/64875c9507d5fa32884e)
-[Sequelize公式](https://sequelize.org/v5/manual/getting-started.html)
+- [もっとORMを使えるようになりたいので、見直してみた](https://qiita.com/niisan-tokyo/items/156eb35c6eeaf07b9b65)
+- [オブジェクト関係マッピング](https://qiita.com/yk-nakamura/items/acd071f16cda844579b9)
+- [Node.JSのSequelize ORM入門](https://qiita.com/markusveeyola/items/64875c9507d5fa32884e)
+- [Sequelize公式](https://sequelize.org/v5/manual/getting-started.html)
 
 #### MVCとは
 
-[MVCモデルとは！概念やそのメリットをわかりやすく解説！](https://www.geekly.co.jp/column/cat-technology/1911_040/)
+- [MVCモデルとは！概念やそのメリットをわかりやすく解説！](https://www.geekly.co.jp/column/cat-technology/1911_040/)
 
 #### Webアプリケーションフレームワーク
 
-[フレームワークとは？今更聞けないWebフレームワークを始めから丁寧に](https://blog.codecamp.jp/web_framework)
-[Webフレームワークとは何か](https://postd.cc/what-is-a-web-framework/)
-[Express.js公式ドキュメント](https://expressjs.com/ja/)
+- [フレームワークとは？今更聞けないWebフレームワークを始めから丁寧に](https://blog.codecamp.jp/web_framework)
+- [Webフレームワークとは何か](https://postd.cc/what-is-a-web-framework/)
+- [Express.js公式ドキュメント](https://expressjs.com/ja/)
 
 #### WebAPIでの認証・認可
 
-[Express+Passportで簡単に認証機能を実現](https://qiita.com/papi_tokei/items/9b852774114ebc7a6255)
-[Passport.js の基本的な利用方法 (Node.js & Express)](https://qiita.com/tuneyukkie/items/b1bc2a26cfb7c480e56b)
-[Passport](http://www.passportjs.org/docs/)
+- [Express+Passportで簡単に認証機能を実現](https://qiita.com/papi_tokei/items/9b852774114ebc7a6255)
+- [Passport.js の基本的な利用方法 (Node.js & Express)](https://qiita.com/tuneyukkie/items/b1bc2a26cfb7c480e56b)
+- [Passport](http://www.passportjs.org/docs/)
 
 
 ### 1. 課題用リポジトリの作成
@@ -73,20 +73,33 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 #### ステップ1 Express+TypeScript環境の構築
 
+
+#####  チェックリスト
+
 #### ステップ2 Sequerizeの導入
 
 [API仕様書](https://github.com/version-1/express-crud/wiki/API%E4%BB%95%E6%A7%98%E6%9B%B8) を元にモデルの作成
 
-- モデルの作成
-- DB接続の確認
 
-#### ステップ3 migration, seederのセットアップ
+#####  チェックリスト
+
+- [ ] DB接続の確認
+- [ ] 全モデルの作成
+- [ ] マイグレーションの作成
+- [ ] シードの作成（Categoriesテーブルだけ）
 
 #### ステップ4 認証/認可の実装
 
 `/auth` 配下のエンドポイントの実装
 
 [API仕様書](https://github.com/version-1/express-crud/wiki/API%E4%BB%95%E6%A7%98%E6%9B%B8)
+
+#####  チェックリスト
+
+- [ ] /auth/signupでユーザ登録ができること
+- [ ] /auth/loginでログインができること(jwtが返却されること）
+- [ ] /userでユーザ情報が取得できること
+
 
 
 #### ステップ4 その他のエンドポイントの実装
@@ -95,6 +108,8 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 [API仕様書](https://github.com/version-1/express-crud/wiki/API%E4%BB%95%E6%A7%98%E6%9B%B8)
 
+- [ ] 仕様書通りに実装されていること
+
 ### 3. HerokuにAPIをデプロイ
 
 HerokuにAPIをデプロイして公開します。
@@ -102,4 +117,3 @@ HerokuにAPIをデプロイして公開します。
 
 [Herokuへのデプロイ手順](https://github.com/version-1/express-crud/wiki/Heroku%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
 
-## 注意事項
