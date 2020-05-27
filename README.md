@@ -115,3 +115,20 @@ HerokuにAPIをデプロイして公開します。
 
 [Herokuへのデプロイ手順(作成中)](https://github.com/version-1/express-crud/wiki/Heroku%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
 
+## 補足事項
+
+### データベースのGUIツールについて
+
+データベースを使うにはチュートリアルはコマンドライン上でやって欲しいですが、普段はGUIから操作することが多いです。
+インストールしておくことを強くおすすめします。
+
+- https://www.sequelpro.com/
+- https://tableplus.com/
+
+### HTTPクライアントツールについて
+
+APIをテストするにあたってHTTPリクエストを送る必要があります。curlのような温かみのあるツールを使っても良いですが、
+今時のChromeからリクエストを送れるツールを使うのも良いかと思います。
+
+- [curlコマンドでapiを叩く](https://qiita.com/bunty/items/758425773b2239feb9a7)
+- [【Chrome】ブラウザから簡単にREST APIを叩く方法【Talend API Tester（旧 Restlet Client）】](https://katblog.manadream.net/index.php/2019/02/11/rest-api-from-restlet-client/)
