@@ -37,13 +37,29 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 [MySQLチュートリアル](https://github.com/version-1/express-crud/wiki/MySQL%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB)
 
-#### ORMとは
+#### ORM(オブジェクトリレーショナルマッッピング)
+
+[もっとORMを使えるようになりたいので、見直してみた](https://qiita.com/niisan-tokyo/items/156eb35c6eeaf07b9b65)
+[オブジェクト関係マッピング](https://qiita.com/yk-nakamura/items/acd071f16cda844579b9)
+[Node.JSのSequelize ORM入門](https://qiita.com/markusveeyola/items/64875c9507d5fa32884e)
+[Sequelize公式](https://sequelize.org/v5/manual/getting-started.html)
 
 #### MVCとは
 
+[MVCモデルとは！概念やそのメリットをわかりやすく解説！](https://www.geekly.co.jp/column/cat-technology/1911_040/)
+
+#### Webアプリケーションフレームワーク
+
+[フレームワークとは？今更聞けないWebフレームワークを始めから丁寧に](https://blog.codecamp.jp/web_framework)
+[Webフレームワークとは何か](https://postd.cc/what-is-a-web-framework/)
+[Express.js公式ドキュメント](https://expressjs.com/ja/)
+
 #### WebAPIでの認証・認可
 
-[Express+Passportでの認証の実装]()
+[Express+Passportで簡単に認証機能を実現](https://qiita.com/papi_tokei/items/9b852774114ebc7a6255)
+[Passport.js の基本的な利用方法 (Node.js & Express)](https://qiita.com/tuneyukkie/items/b1bc2a26cfb7c480e56b)
+[Passport](http://www.passportjs.org/docs/)
+
 
 ### 1. 課題用リポジトリの作成
 
