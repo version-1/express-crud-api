@@ -31,10 +31,14 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 コンテナ仮想化技術をメインでは学びませんがMySQLを使用する際に使うので概要だけでもさらうようにしておいてください。
 
+[Dockerとは何かを入門者向けに解説！基本コマンドも](https://udemy.benesse.co.jp/development/web/docker.html)
+
 #### データベース(MySQL)の基本
 
 これまでデータベースを触ったことがない人、Wikiの内容を初めてみる方は課題前に必ずチュートリアルを終わらせてから課題に入ってください。
 
+- [「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典-リレーショナルデータベース (RDB)](https://wa3.i-3-i.info/word11770.html) 
+- [【初心者向け】MySQLでできることや使い方の基本について](https://www.atoone.co.jp/column/10114/)
 - [MySQLチュートリアル](https://github.com/version-1/express-crud/wiki/MySQL%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB)
 
 #### ORM(オブジェクトリレーショナルマッッピング)
