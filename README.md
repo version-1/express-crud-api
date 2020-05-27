@@ -96,9 +96,9 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 #####  チェックリスト
 
-- [ ] /auth/signupでユーザ登録ができること
-- [ ] /auth/loginでログインができること(jwtが返却されること）
-- [ ] /userでユーザ情報が取得できること
+- [ ] `/auth/signup`でユーザ登録ができること
+- [ ] `/auth/login`でログインができること(jwtが返却されること）
+- [ ] `/user`でユーザ情報が取得できること
 
 #### ステップ4 その他のエンドポイントの実装
 
@@ -113,5 +113,5 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 HerokuにAPIをデプロイして公開します。
 手順はWikiを参照してください。
 
-[Herokuへのデプロイ手順](https://github.com/version-1/express-crud/wiki/Heroku%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
+[Herokuへのデプロイ手順(作成中)](https://github.com/version-1/express-crud/wiki/Heroku%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
 
