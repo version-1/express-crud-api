@@ -78,7 +78,7 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 #### ステップ2 Sequerizeの導入
 
-[API仕様書](https://github.com/version-1/express-crud/wiki/API%E4%BB%95%E6%A7%98%E6%9B%B8) を元にモデルの作成
+[テーブル定義書](https://github.com/version-1/ws-0700-express-crud/wiki/%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E5%AE%9A%E7%BE%A9%E6%9B%B8) を元にモデルの作成
 
 
 #####  チェックリスト
