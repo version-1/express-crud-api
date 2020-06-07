@@ -10,6 +10,33 @@
 
 demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
+1. 下記エンドポイントにPOSTリクエストを行いユーザを作成
+/auth/signup
+```json
+{
+  "user":  {
+    "loginId": "[login ID]",
+    "name": "[name]",
+    "iconUrl": "[icon url]",
+    "password": "[password]"
+  }
+}
+```
+
+2. 下記エンドポイントで1.の認証情報を使って認証。
+/auth/login
+```
+{
+    "loginId": "[login ID]",
+    "password": "[password]"
+}
+```
+
+3. 2で受け取ったjwtをHttpヘッダに含めてその他のエンドポイントにリクエスト
+→ 下記仕様書にあるエンドポイントでリクエストを試せます。
+
+[API仕様書](https://github.com/version-1/express-crud/wiki/API%E4%BB%95%E6%A7%98%E6%9B%B8)
+
 ※しばらく誰もアクセスしていないとサーバが休眠状態になってしまうので、最初のアクセスではしばらく待ちが発生するかもしれません
 
 ## 課題で身に着けること
