@@ -11,7 +11,8 @@
 demo: [Demo](https://express-crud-sample.herokuapp.com/)
 
 1. 下記エンドポイントにPOSTリクエストを行いユーザを作成
-/auth/signup
+
+url: https://express-crud-sample.herokuapp.com/auth/signup
 ```json
 {
   "user":  {
@@ -24,7 +25,7 @@ demo: [Demo](https://express-crud-sample.herokuapp.com/)
 ```
 
 2. 下記エンドポイントで1.の認証情報を使って認証。
-/auth/login
+url: https://express-crud-sample.herokuapp.com/auth/login
 ```
 {
     "loginId": "[login ID]",
