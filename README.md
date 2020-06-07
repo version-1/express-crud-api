@@ -48,6 +48,7 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 - SQLでのCRUD
 - ORMの基礎
 - ORMでのCRUD
+- マイグレーションとシード
 - API(Passport)を使用した認証・認可
 - Expressを利用したWeb APIの実装
 
