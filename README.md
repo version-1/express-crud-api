@@ -114,6 +114,9 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 
 下記順番に実装を行うようお願いします。
 
+※MySQLをさわったことのない方はチュートリアルをすませてから課題にはいってください。
+- [MySQLチュートリアル](https://github.com/version-1/express-crud/wiki/MySQL%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB)
+
 #### ステップ1 Express+TypeScript環境の構築
 
 #####  チェックリスト
