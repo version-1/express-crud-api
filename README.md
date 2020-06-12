@@ -96,6 +96,13 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 - [Passport.js の基本的な利用方法 (Node.js & Express)](https://qiita.com/tuneyukkie/items/b1bc2a26cfb7c480e56b)
 - [Passport](http://www.passportjs.org/docs/)
 
+#### TypeScript
+
+- [TypeScript公式](https://www.typescriptlang.org/docs/home.html)
+- [TypeScript入門者がハマりがちな記法(文法)の呼び方と簡易解説まとめ](https://qiita.com/gutchom/items/bb740deb3100684b82a6)
+- [TypeScriptで始めるNode.js入門](https://ics.media/entry/4682/)
+- [TypescriptでExpressを設定する](https://qiita.com/kubocchi/items/0e9bf6ee9eab98905d77)
+
 
 ### 1. 課題用リポジトリの作成
 
