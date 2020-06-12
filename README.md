@@ -73,9 +73,6 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 
 - [MySQLチュートリアル](https://github.com/version-1/express-crud/wiki/MySQL%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB)
 
-
-
-
 #### ORM(オブジェクトリレーショナルマッッピング)
 
 - [もっとORMを使えるようになりたいので、見直してみた](https://qiita.com/niisan-tokyo/items/156eb35c6eeaf07b9b65)
@@ -112,8 +109,12 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 
 #### ステップ1 Express+TypeScript環境の構築
 
-
 #####  チェックリスト
+
+- [ ] typescriptのインストール
+- [ ] expressのインストール
+- [ ] expressサーバが起動すること
+- [ ] ルートのエンドポイントが `{"message":"ok"}` のjsonを返却すること
 
 #### ステップ2 Sequerizeの導入
 
@@ -127,7 +128,7 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 - [ ] マイグレーションの作成
 - [ ] シードの作成（Categoriesテーブルだけ）
 
-#### ステップ4 認証/認可の実装
+#### ステップ3 認証/認可の実装
 
 `/auth` 配下のエンドポイントの実装
 
@@ -139,7 +140,7 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 - [ ] `/auth/login`でログインができること(jwtが返却されること）
 - [ ] `/user`でユーザ情報が取得できること
 
-#### ステップ3 その他のエンドポイントの実装
+#### ステップ4 その他のエンドポイントの実装
 
 仕様書にあるその他のエンドポイントの実装
 
