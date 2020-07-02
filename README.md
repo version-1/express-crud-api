@@ -68,6 +68,7 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 - [「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典-リレーショナルデータベース (RDB)](https://wa3.i-3-i.info/word11770.html) 
 - [【初心者向け】MySQLでできることや使い方の基本について](https://www.atoone.co.jp/column/10114/)
 - [SQL素人でも分かるテーブル結合(inner joinとouter join)](https://qiita.com/naoki_mochizuki/items/3fda1ad6594c11d7b43c)
+- [「トランザクション」とは何か？を超わかりやすく語ってみた！](https://qiita.com/zd6ir7/items/6568b6c3efc5d6a13865)
 
 **これまでデータベースを触ったことがない方は下記チュートリアルを終わらせてから課題に入ってください。↓↓↓↓↓**
 
