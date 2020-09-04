@@ -102,6 +102,7 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 #### TypeScript
 
 - [TypeScript公式](https://www.typescriptlang.org/docs/home.html)
+- [TypeScript Deep Dive 日本語版](https://typescript-jp.gitbook.io/deep-dive/)
 - [TypeScript入門者がハマりがちな記法(文法)の呼び方と簡易解説まとめ](https://qiita.com/gutchom/items/bb740deb3100684b82a6)
 - [https://qiita.com/Nossa/items/726cc3e67527e896ed1e](https://qiita.com/Nossa/items/726cc3e67527e896ed1e)
 - [TypeScriptで始めるNode.js入門](https://ics.media/entry/4682/)
