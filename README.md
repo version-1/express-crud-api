@@ -168,7 +168,7 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 HerokuにAPIをデプロイして公開します。
 手順はWikiを参照してください。
 
-[Herokuへのデプロイ手順(作成中)](https://github.com/version-1/express-crud/wiki/Heroku%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
+[Herokuへのデプロイ手順](https://github.com/version-1/express-crud/wiki/Heroku%E3%81%B8%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
 
 ## 補足事項
 
