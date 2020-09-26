@@ -92,6 +92,7 @@ url: https://express-crud-sample.herokuapp.com/auth/login
 - [Webフレームワークとは何か](https://postd.cc/what-is-a-web-framework/)
 - [Express.js公式ドキュメント](https://expressjs.com/ja/)
 - [Express のインストール - Express.js](https://expressjs.com/ja/starter/installing.html)
+- [node.js + expressでPOSTを受け取る & POSTパラメータをJSONで取得する](https://qiita.com/ktanaka117/items/596febd96a63ae1431f8)
 
 #### WebAPIでの認証・認可
 
