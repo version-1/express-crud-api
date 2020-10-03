@@ -21,6 +21,9 @@ passport.use(
           }
 
           const validate = compare(password, User.salt(user), user.authorizeToken!)
+          if (!validate) {
+            return cb(null, false, { message: 'Incorrect email or password.' })
+          }
           return cb(null, user, { message: 'Logged In Successfully' })
         })
         .catch((err: Error) => cb(err))
