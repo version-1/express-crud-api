@@ -8,11 +8,11 @@
 
 デモは [Heroku](https://www.heroku.com) に上がっています。
 
-demo: [Demo](https://express-crud-sample.herokuapp.com/)
+demo: [Demo](https://express-crud-sample-728c698bcec2.herokuapp.com/)
 
 1. 下記エンドポイントにPOSTリクエストを行いユーザを作成
 
-url: https://express-crud-sample.herokuapp.com/auth/signup
+url: https://express-crud-sample-728c698bcec2.herokuapp.com/auth/signup
 ```json
 {
   "user":  {
@@ -25,7 +25,7 @@ url: https://express-crud-sample.herokuapp.com/auth/signup
 ```
 
 2. 下記エンドポイントで1.の認証情報を使って認証。
-url: https://express-crud-sample.herokuapp.com/auth/login
+url: https://express-crud-sample-728c698bcec2.herokuapp.com/auth/login
 ```
 {
     "loginId": "[login ID]",
