@@ -1,4 +1,5 @@
 'use strict';
+
 const tableName = 'Categories'
 
 module.exports = {

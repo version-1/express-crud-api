@@ -64,13 +64,13 @@ Post.init(
   },
   {
     sequelize: db,
-    modelName: 'post',
+    modelName: 'Post',
   },
 )
 
-export const PostCategories = Post.hasMany(PostCategory)
-export const postCategory = PostCategory.belongsTo(Post)
-export const Categories = Post.belongsToMany(Category, { as: 'categories', through: 'PostCategories' })
-export const Posts = Category.belongsToMany(Post, { as: 'posts', through: 'PostCategories' })
+Post.hasMany(PostCategory)
+PostCategory.belongsTo(Post)
+Post.belongsToMany(Category, { as: 'categories', through: 'postCategories' })
+Category.belongsToMany(Post, { as: 'posts', through: 'postCategories' })
 
 export default Post

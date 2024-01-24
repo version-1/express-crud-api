@@ -31,7 +31,7 @@ PostCategory.init({
   },
 }, {
   sequelize: db,
-  modelName: 'postCategory'
+  modelName: 'PostCategory'
   // options
 });
 

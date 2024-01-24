@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express'
-import Post, { Status, Categories } from '../models/post'
+import Post, { Status } from '../models/post'
 import PostCategory from '../models/postCategory'
 import Category from '../models/category'
 import conn from '../models'
