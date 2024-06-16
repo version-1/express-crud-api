@@ -33,7 +33,7 @@ url: https://express-crud-sample-728c698bcec2.herokuapp.com/auth/login
 }
 ```
 
-3. 2で受け取ったjwtをHttpヘッダに含めてその他のエンドポイントにリクエスト
+3. 2で受け取ったトークンをHttpヘッダに含めてその他のエンドポイントにリクエスト
 → 下記仕様書にあるエンドポイントでリクエストを試せます。
 
 - [API仕様書](https://github.com/version-1/express-crud/wiki/API%E4%BB%95%E6%A7%98%E6%9B%B8)
