@@ -67,7 +67,6 @@ url: https://express-crud-sample-728c698bcec2.herokuapp.com/auth/login
 #### データベース(MySQL)の基本
 
 - [「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典-リレーショナルデータベース (RDB)](https://wa3.i-3-i.info/word11770.html) 
-- [【初心者向け】MySQLでできることや使い方の基本について](https://www.atoone.co.jp/column/10114/)
 - [SQL素人でも分かるテーブル結合(inner joinとouter join)](https://qiita.com/naoki_mochizuki/items/3fda1ad6594c11d7b43c)
 - [「トランザクション」とは何か？を超わかりやすく語ってみた！](https://qiita.com/zd6ir7/items/6568b6c3efc5d6a13865)
 
@@ -84,7 +83,8 @@ url: https://express-crud-sample-728c698bcec2.herokuapp.com/auth/login
 
 #### MVCとは
 
-- [MVCモデルとは！概念やそのメリットをわかりやすく解説！](https://www.geekly.co.jp/column/cat-technology/1911_040/)
+- [MVCモデルについて(メリット・デメリット)](https://zenn.dev/tya0116/articles/c2f4b75e060187)
+
 
 #### Webアプリケーションフレームワーク
 
@@ -102,12 +102,11 @@ url: https://express-crud-sample-728c698bcec2.herokuapp.com/auth/login
 
 #### TypeScript
 
-- [TypeScript公式](https://www.typescriptlang.org/docs/home.html)
+- [TypeScript公式](https://www.typescriptlang.org)
 - [TypeScript Deep Dive 日本語版](https://typescript-jp.gitbook.io/deep-dive/)
 - [TypeScript入門者がハマりがちな記法(文法)の呼び方と簡易解説まとめ](https://qiita.com/gutchom/items/bb740deb3100684b82a6)
 - [https://qiita.com/Nossa/items/726cc3e67527e896ed1e](https://qiita.com/Nossa/items/726cc3e67527e896ed1e)
 - [TypeScriptで始めるNode.js入門](https://ics.media/entry/4682/)
-- [TypescriptでExpressを設定する](https://qiita.com/kubocchi/items/0e9bf6ee9eab98905d77)
 
 
 ### 1. 課題用リポジトリの作成
