@@ -61,8 +61,8 @@ url: https://express-crud-sample-728c698bcec2.herokuapp.com/auth/login
 
 コンテナ仮想化技術をメインでは学びませんがMySQLを使用する際に使うので概要だけでもさらうようにしておいてください。
 
-[Docker ドキュメント（公式](https://docs.docker.com/get-started/overview/)
-[Dockerとは何かを入門者向けに解説！基本コマンドも](https://udemy.benesse.co.jp/development/web/docker.html)
+- [Docker ドキュメント（公式](https://docs.docker.com/get-started/overview/)
+- [Dockerとは何かを入門者向けに解説！基本コマンドも](https://udemy.benesse.co.jp/development/web/docker.html)
 
 #### データベース(MySQL)の基本
 
