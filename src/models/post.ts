@@ -35,10 +35,10 @@ class Post extends Sequelize.Model {
   }
 
   public async updateWithAssociation(params: any, associations: { categoryIds: number[] }) {
+    const categories = await Category.findAll({ where: { id: associations.categoryIds } })
     await db.transaction(async (t) => {
-      this.update(params)
-      const categories = await Category.findAll({ where: { id: associations.categoryIds } })
-      this.setCategories!(categories, { through: { postId: this.id }, transaction: t })
+      await this.update(params, { transaction: t })
+      await this.setCategories!(categories, { through: { postId: this.id }, transaction: t })
     })
   }
 }
