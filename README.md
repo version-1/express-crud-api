@@ -10,7 +10,7 @@ $ docker run -d -v $PWD/data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=
 // connect db
 $ mysql -h 127.0.0.1 -u root -ppassword
 
-myssql> create databse crudapi_development;
+myssql> create database crudapi_development;
 ```
 
 
@@ -23,7 +23,7 @@ export DATABASE_PASSWORD=
 export DATABASE_USERNAME=root
 export JWT_SECRET_KEY=[secret]
 
-yarn install
-yarn db:setup
+npm install
+npm run db:setup
 ```
 

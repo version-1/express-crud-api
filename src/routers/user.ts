@@ -1,18 +1,22 @@
-import express, { Request, Response, NextFunction } from 'express'
-import User from '../models/user'
+import express, { Request, Response } from 'express'
 import Category from '../models/category'
+import { RequestWithContext } from '.'
 const router = express.Router()
 
 /* POST users listing. */
-router.get('/', async function (req: any, res: Response, next: NextFunction) {
-  const { authorizeToken, ...user } = req.user.toJSON()
+router.get('/', async function (req: Request, res: Response) {
+  const r = req as RequestWithContext
+
+  const { authorizeToken, ...user } = r.user.toJSON()
   res.status(200).json({ user })
 })
 
 /* GET user posts listing. */
-router.get('/posts', async function (req: any, res: Response, next: NextFunction) {
+router.get('/posts', async function (req: Request, res: Response) {
+  const r = req as RequestWithContext
+
   const where = req.query as { [key: string]: any }
-  const posts = await req.user.getPosts({ where, include: [{ model: Category, as: 'categories' }] })
+  const posts = await (r.user as any).getPosts({ where, include: [{ model: Category, as: 'categories' }] })
   res.status(200).json({ posts })
 })
 

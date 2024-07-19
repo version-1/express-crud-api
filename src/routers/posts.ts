@@ -1,8 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express'
-import Post, { Status } from '../models/post'
-import PostCategory from '../models/postCategory'
+import Post from '../models/post'
 import Category from '../models/category'
-import conn from '../models'
+import { RequestWithContext } from '.'
 const router = express.Router()
 
 /* GET posts listing. */
@@ -24,17 +23,27 @@ router.get('/:id', async function (req: Request, res: Response, next: NextFuncti
   const post = await Post.findByPk(id, {
     include: [{ model: Category, as: 'categories' }],
   })
+  if (!post) {
+    return res.status(404).json({ message: 'Post not found' })
+  }
+
   res.status(200).json({ post })
 })
 
 /* POST create post */
-router.post('/', async function (req: any, res: Response, next: NextFunction) {
+router.post('/', async function (req: Request, res: Response, next: NextFunction) {
+  const r = req as RequestWithContext
   const {
     post: { categoryIds, ...rest },
   } = req.body
+
   try {
-    const params = { ...rest, userId: req.user.id }
-    await Post.add(params, categoryIds)
+    const params = { ...rest, userId: r.user?.id }
+    const error = await Post.add(params, categoryIds)
+    if (error) {
+      return res.status(400).json(error)
+    }
+
     res.status(201).json({})
   } catch (error) {
     return next(error)
@@ -48,6 +57,10 @@ router.patch('/:id', async function (req: Request, res: Response, next: NextFunc
     post: { categoryIds, ...rest },
   } = req.body
   const post = await Post.findByPk(id)
+  if (!post) {
+    return res.status(404).json({ message: 'Post not found' })
+  }
+
   try {
     await post!.updateWithAssociation(rest, { categoryIds })
     res.status(200).json({ post })
@@ -59,9 +72,12 @@ router.patch('/:id', async function (req: Request, res: Response, next: NextFunc
 /* DELETE delete post */
 router.delete('/:id', async function (req: Request, res: Response, next: NextFunction) {
   const { id } = req.params
-  const { categoryIds } = req.body
   try {
     const post = await Post.findByPk(id)
+    if (!post) {
+      return res.status(404).json({ message: 'Post not found' })
+    }
+
     await post!.destroy()
     res.status(200).json({ post })
   } catch (error) {

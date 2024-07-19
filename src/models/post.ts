@@ -1,6 +1,5 @@
 import Sequelize from 'sequelize'
 import db from './'
-import User from './user'
 import PostCategory from './postCategory'
 import Category from './category'
 
@@ -15,9 +14,15 @@ class Post extends Sequelize.Model {
   public setCategories?: Function
 
   static async add(params: any, categoryIds: number[]) {
+    const categories = await Category.findAll({ where: { id: categoryIds } })
+
+    if (categories.length !== categoryIds.length) {
+      const missingIds = categoryIds.filter((id) => !categories.find((category) => category.id === id))
+      return `category is missing: [${missingIds.join(',')}]`
+    }
+
     await db.transaction(async (t) => {
       const post = await Post.create(params, { transaction: t })
-      const categories = await Category.findAll({ where: { id: categoryIds } })
       if (post) {
         await (post as any).setCategories(categories, {
           through: {
@@ -33,7 +38,7 @@ class Post extends Sequelize.Model {
     await db.transaction(async (t) => {
       this.update(params)
       const categories = await Category.findAll({ where: { id: associations.categoryIds } })
-      this.setCategories!(categories, { through: { postId: this.id } })
+      this.setCategories!(categories, { through: { postId: this.id }, transaction: t })
     })
   }
 }
