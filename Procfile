@@ -1,1 +1,1 @@
-web: NODE_ENV=development yarn install && yarn deploy
+web: NODE_ENV=development npm install && npm run deploy
