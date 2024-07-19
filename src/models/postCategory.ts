@@ -31,8 +31,8 @@ PostCategory.init({
   },
 }, {
   sequelize: db,
-  modelName: 'PostCategory'
-  // options
+  modelName: 'PostCategory',
+  tableName: 'postCategories'
 });
 
 export default PostCategory

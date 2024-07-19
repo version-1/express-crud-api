@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize'
+import Sequelize, { HasManyGetAssociationsMixin } from 'sequelize'
 import db from './'
 import Post from './post'
 
@@ -6,6 +6,8 @@ class User extends Sequelize.Model {
   declare public id?: number
   declare public loginId?: number
   declare public authorizeToken?: string
+
+  declare getPosts: HasManyGetAssociationsMixin<Post>;
 
   public static salt(user: User): string {
     return [user.loginId].join('-')
@@ -50,7 +52,7 @@ User.init(
   {
     sequelize: db,
     modelName: 'User',
-    // options
+    tableName: 'users',
   },
 )
 

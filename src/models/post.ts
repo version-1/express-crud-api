@@ -70,6 +70,7 @@ Post.init(
   {
     sequelize: db,
     modelName: 'Post',
+    tableName: 'posts'
   },
 )
 

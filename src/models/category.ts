@@ -28,7 +28,7 @@ Category.init(
   {
     sequelize: db,
     modelName: 'Category',
-    // options
+    tableName: 'categories',
   },
 )
 

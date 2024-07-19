@@ -16,7 +16,7 @@ router.get('/posts', async function (req: Request, res: Response) {
   const r = req as RequestWithContext
 
   const where = req.query as { [key: string]: any }
-  const posts = await (r.user as any).getPosts({ where, include: [{ model: Category, as: 'categories' }] })
+  const posts = await r.user.getPosts({ where, include: [{ model: Category, as: 'categories' }] })
   res.status(200).json({ posts })
 })
 
