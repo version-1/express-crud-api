@@ -1,5 +1,4 @@
-import express from 'express'
-import path from 'path'
+import express, { Request, Response, NextFunction } from 'express'
 import bodyParser from 'body-parser'
 import passport from 'passport'
 import './src/middlewares/passport'
@@ -12,13 +11,12 @@ const app = express()
 const port = process.env.PORT || 8080 // default port to listen
 
 // define a route handler for the default home page
-app.get('/', (req, res) => {
+app.get('/', (_req: Request, res: Response) => {
   res.json({ message: 'ok' })
 })
 
 app.use(express.json())
 app.use(bodyParser.json({ type: 'application/*+json' }))
-
 const routersWithAuth = [
   { path: '/posts', route: posts },
   { path: '/categories', route: categories },
@@ -29,6 +27,11 @@ routersWithAuth.forEach(route => {
   app.use(route.path, passport.authenticate('jwt', {session: false}), route.route)
 })
 app.use('/auth', auth)
+
+app.use(function(err: Error, _req: Request, res: Response, _next: NextFunction) {
+  console.error(err.stack)
+  res.status(500).send({ message: err.message })
+});
 
 // start the express server
 app.listen(port, () => {
